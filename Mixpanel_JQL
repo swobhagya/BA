@@ -1,0 +1,32 @@
+
+#Return all user profiles
+
+function main() {
+  return People()
+}
+
+#Return Datestamp events
+function main() {
+  return Events({
+    from_date: '2017-12-29',
+    to_date:   '2017-12-29'
+  })
+}
+
+#Get all users, whom profiles are created bvetween two dates
+
+function main() {
+  return People(
+  ).filter(function(user){
+    return user.properties.created_on >= new Date("2018-01-02") &&
+           user.properties.created_on <= new Date("2018-01-03");
+  })
+}
+
+#Get all users, whom profiles are created on perticular date
+function main() {
+  return People(
+  ).filter(function(user){
+    return user.properties.created_on >= new Date("2018-01-03");
+  })
+}
